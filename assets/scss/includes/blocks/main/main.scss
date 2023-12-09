@@ -1,0 +1,96 @@
+.main {
+    &__content {
+        padding: 80px 0 125px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 17px;
+        @include max-xlmidle {
+            padding: 50px 0;
+        }
+        @include max-md {
+            flex-direction: column;
+            padding: 50px 0 64px;
+        }
+        & > .custom__link {
+            display: none;
+            @include max-md{
+                display: flex;
+                margin-top: 40px;
+            }
+            
+        }
+    }
+    &__info {
+        & .custom__link {
+            @include max-md{
+                display: none;
+            }
+            
+        }
+    }
+    &__title {
+        max-width: 590px;
+        font-family: Philosopher;
+        font-size: 65px;
+        font-weight: 700;
+        line-height: 84px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #936d42;
+        text-transform: uppercase;
+        @include max-xlmidle {
+            font-size: 50px;
+            line-height: 70px;
+        }
+        @include max-lg {
+            font-size: 40px;
+            line-height: 50px;
+        }
+        @include max-md {
+            text-align: center;
+            font-size: 28px;
+            line-height: 36px;
+            max-width: 100%;
+        }
+    }
+    &__desc {
+        max-width: 540px;
+        font-family: Mulish;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 34px;
+        color: #05081e;
+        margin: 24px 0 40px;
+        @include max-lg {
+            margin: 15px 0 30px;
+        }
+        @include max-md {
+            font-size: 18px;
+            line-height: 27px;
+            text-align: center;
+            margin: 16px 0 40px;
+            max-width: 100%;
+        }
+    }
+    
+    &__img {
+        max-width: 594px;
+        animation: rotate 6s linear infinite;
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @include max-xlmidle {
+            max-width: 400px;
+        }
+        @include max-lg {
+            max-width: 350px;
+        }
+    }
+    
+}

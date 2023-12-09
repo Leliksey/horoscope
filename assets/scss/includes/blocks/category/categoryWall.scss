@@ -1,0 +1,131 @@
+.categoryWall {
+    padding: 120px 0 0;
+    @include max-xlmidle{
+        padding: 75px 0 0;
+    }
+    @include max-md{
+        padding: 48px 0 0;
+    }
+    
+    &__sectionText {
+        margin-top: 16px;
+        max-width: 674px;
+        margin: 16px auto 0;
+        @include max-md{
+            max-width: 342px;
+            margin: 16px auto 0;
+        }
+        
+    }
+    &__content {
+        & > .link-more {
+            justify-content: center;
+            margin: 55px 0;
+            display: none;
+            font-size: 18px;
+            @include max-xxxl{
+                display: flex;
+            }
+            @include max-md{
+                font-size: 13px;
+                margin: 40px 0 55px;
+            }
+            
+        }
+    }
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 82px;
+        @include max-xlmidle{
+            margin-top: 50px;
+        }
+        @include max-md{
+            margin-top: 32px;
+        }
+        
+        & .link-more {
+            margin-top: 24px;
+        }
+        &.open .categoryWall__item {
+            transition: .5s;
+            display: flex;
+        }
+    }
+    &__item {
+        padding: 32px 32px 40px;
+        border: 1px solid #e7e7e7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 20%;
+        @include max-xxxl{
+            width: 25%;
+        }
+        @include max-xxl{
+            width: 33.33%;
+            padding: 32px 24px;
+        }
+        @include max-md{
+            width: 50%;
+        }
+        
+        &:nth-child(odd) {
+            background-color: #fffcfa;
+        }
+        &:nth-child(n + 9) {
+            @include max-xxxl{
+                display: none;
+            }
+        }
+        &:nth-child(n + 7) {
+            @include max-xxl{
+                display: none;
+            }
+        }
+        &-img {
+            max-width: 252px;
+            @include max-xlmidle{
+                max-width: 200px;
+            }
+            
+            @include max-lg{
+                max-width: 152px;
+            }
+            @include max-md{
+                max-width: 90px;
+            }
+            
+        }
+        &-title {
+            margin-top: 32px;
+            font-family: Philosopher;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 26px;
+            color: #936d42;
+            text-transform: uppercase;
+            text-align: center;
+            @include max-xlmidle{
+                margin-top: 25px;
+            }
+            
+            @include max-md{
+                margin-top: 16px;
+                font-size: 16px;
+                line-height: 20px;
+            }
+            
+        }
+        &-desc {
+            margin-top: 24px;
+            @include max-md{
+                display: none;
+            }
+            
+        }
+    }
+}
+// .categoryWall__item[style*="display: block"] {
+//     display: flex !important;
+//   }
