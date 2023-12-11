@@ -3,7 +3,6 @@
     &__bg-img {
         position: absolute;
         z-index: 1;
-        display: none;
     }
     &__content {
     }
@@ -112,6 +111,7 @@
     &__info-img {
         max-width: 426px;
         object-fit: contain;
+        animation: moveTopBottom 3s linear infinite;
         @include max-xlmidle{
             max-width: 326px;
         }
@@ -119,5 +119,16 @@
             display: none;
         }
         
+    }
+}
+@keyframes moveTopBottom {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0);
     }
 }

@@ -1,0 +1,224 @@
+.pricing {
+  position: relative;
+  background-color: #05081e;
+  &__bg-img {
+    position: absolute;
+    z-index: 1;
+    display: none;
+  }
+  & .pricing__bg-img {
+  }
+  &__content {
+  }
+  &__info-wrap {
+  }
+  &__info {
+  }
+  &__tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+    @include max-md{
+      margin-top: 32px;
+    }
+    
+  }
+  &__tab {
+    font-family: Philosopher;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 39px;
+    color: #818181;
+    border-bottom: 1px solid #818181;
+    padding: 0 15px;
+    cursor: pointer;
+    @include max-md{
+      font-size: 14px;
+      line-height: 22px;
+    }
+    
+    &.active {
+      color: #936d42;
+      border-bottom: 1px solid #936d42;
+    }
+  }
+  &__items {
+    display: flex;
+    column-gap: 48px;
+    margin-top: 64px;
+    @include max-md{
+      flex-direction: column;
+      row-gap: 16px;
+      margin-top: 40px;
+    }
+    
+  }
+  &__item {
+    background-color: #191b30;
+    display: flex;
+    flex-direction: column;
+    padding: 64px 48px;
+    border-radius: 16px;
+    @include max-md{
+      padding: 32px 12px;
+    }
+    
+    &-list {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      @include max-md{
+        row-gap: 18px;
+      }
+      
+      &__item {
+        display: flex;
+        align-items: flex-start;
+        column-gap: 10px;
+        text-transform: uppercase;
+        font-family: Mulish;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #fffcfa;
+        @include max-md{
+          font-size: 12px;
+          line-height: 15px;
+        }
+        
+        &::before {
+          content: "";
+          background-image: url("data:image/svg+xml,%3Csvg width='14' height='16' viewBox='0 0 14 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.0566 6.33962L6.64151 0L4.5283 6.33962L0 8.45283L4.5283 10.566L6.64151 16L9.0566 10.566L13.5849 8.45283L9.0566 6.33962Z' fill='%23936D42'/%3E%3C/svg%3E%0A");
+          min-width: 14px;
+          height: 16px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          display: block;
+          transition: 0.5s;
+        }
+      }
+    }
+    &-title {
+      color: #fffcfa;
+      font-family: Philosopher;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 27px;
+      text-align: center;
+      text-transform: uppercase;
+      @include max-md{
+        font-size: 16px;
+        line-height: 18px;
+      }
+      
+    }
+    &-price {
+      font-family: Philosopher;
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 72px;
+      text-align: center;
+      color: #936d42;
+      margin-top: 32px;
+      text-transform: uppercase;
+      @include max-md{
+        font-size: 40px;
+        line-height: 45px;
+      }
+      
+    }
+    &-desc.sectionText {
+      color: #fff;
+      text-align: left;
+      margin-top: 48px;
+      @include max-md{
+        margin-top: 24px;
+        font-size: 14px;
+        line-height: 24px;
+      }
+      
+    }
+    &-wrap {
+      padding: 16px;
+      border: 1px dashed #3f3f3f;
+      border-radius: 16px;
+      @include max-md{
+        padding: 12px;
+      }
+      
+    }
+  }
+  &__item-btn {
+    margin: 48px auto 0;
+    max-width: 355px;
+    @include max-md{
+      margin: 18px auto 0;
+    }
+    
+  }
+  &__info-link {
+    position: relative;
+    max-width: 570px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    width: 100%;
+    & img {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      &:hover + .pricing__info-link__modal {
+        display: flex;
+      }
+    }
+    &.sectionText {
+      color: #936d42;
+      margin-top: 32px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      @include max-md{
+        display: none;
+      }
+      
+    }
+    &__modal {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 16px;
+      background-color: #936d42;
+      border-radius: 4px;
+      padding: 27px 35px;
+      position: absolute;
+      bottom: 40px;
+      left: -25px;
+      max-width: 570px;
+      display: none;
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 15px solid #936D42;
+        position: absolute;
+        bottom: -12px;
+        right: 50px;
+      }
+      & .sectionText {
+        text-align: left;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        color: #fff;
+        
+        
+      }
+    }
+  }
+}

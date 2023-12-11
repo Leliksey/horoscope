@@ -16,4 +16,8 @@ $(document).ready(function() {
         e.preventDefault();
         $(".categoryWall__items").toggleClass("open");
     });
+    $(".pricing__tab").click(function() {
+        $(".pricing__tab").removeClass("active");
+        $(this).addClass("active");
+    })
 });
