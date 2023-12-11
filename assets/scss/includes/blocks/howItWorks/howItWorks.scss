@@ -1,0 +1,123 @@
+.howItWorks {
+    position: relative;
+    &__bg-img {
+        position: absolute;
+        z-index: 1;
+        display: none;
+    }
+    &__content {
+    }
+    &__sectionTitle {
+        text-align: left;
+        margin-left: 0;
+        margin-right: auto;
+        @include max-lg{
+            margin: auto;
+        }
+    }
+    &__info-wrap {
+        display: flex;
+        justify-content: center;
+        column-gap: 90px;
+        align-items: flex-end;
+        @include max-xlmidle{ 
+            column-gap: 17px;
+        }
+        
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left: 50px;
+        @include max-lg{
+            padding-left: 0;
+        }
+        
+    }
+    &__numbers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 90px;
+        @include max-xlmidle{ 
+            margin-top: 30px;
+        }
+        @include max-lg{
+            column-gap: 50px;
+        }
+       @include max-md{
+        column-gap: 24px;
+       }
+        
+    }
+    &__group {
+        
+    }
+    &__number {
+        font-family: Philosopher;
+        font-size: 150px;
+        font-weight: 700;
+        line-height: 168px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #936d4259;
+        @include max-xlmidle{ 
+            font-size: 100px;
+            line-height: normal;
+        }
+        @include max-md{
+            font-size: 64px;
+            line-height: 72px;
+        }
+        
+        &_wrap {
+            position: relative;
+        }
+        &-desc {
+            font-family: Philosopher;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 27px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: #936d42;
+            position: absolute;
+            left: 35px;
+            bottom: 30px;
+            min-width: max-content;
+            @include max-xlmidle{ 
+                bottom: 18px;
+            }
+            @include max-md{
+                font-size: 18px;
+                line-height: 20px;
+                bottom: 12px;
+                left: 15px;
+            }
+            
+        }
+    }
+    
+    & .sectionText {
+        margin-top: 15px;
+        max-width: 356px;
+        text-align: left;
+        @include max-xlmidle{ 
+            margin-top: 0;
+        }
+        
+        
+    }
+    &__info-img {
+        max-width: 426px;
+        object-fit: contain;
+        @include max-xlmidle{
+            max-width: 326px;
+        }
+        @include max-lg{
+            display: none;
+        }
+        
+    }
+}

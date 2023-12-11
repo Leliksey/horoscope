@@ -1,0 +1,119 @@
+.whatIs {
+    background-color: #05081e;
+    position: relative;
+    &__bg-img {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        object-fit: cover;
+        z-index: 1;
+        height: 100%;
+    }
+    &__stars-bg-img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        z-index: 5;
+    }
+    &__desc {
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+        margin-top: 64px;
+        @include max-xlmidle{
+            margin-top: 45px;
+        }
+        @include max-md{
+            flex-direction: column;
+            row-gap: 16px;
+            margin-top: 32px;
+        }
+        
+        &-item {
+            color: #fff;
+            font-family: Mulish;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 33px;
+            @include max-xlmidle{
+                font-size: 18px;
+            }
+            @include max-md{
+                font-size: 16px;
+            }
+            
+        }
+    }
+    &__numbers {
+        margin-top: 80px;
+        display: flex;
+        justify-content: space-between;
+        column-gap: 30px;
+        @include max-xlmidle{
+            margin-top: 30px;
+        }
+        @include max-md{
+            flex-wrap: wrap;
+            column-gap: 0;
+            row-gap: 32px;
+            margin-top: 32px;
+        }
+        
+    }
+    &__group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 13px;
+        @include max-xlmidle{
+            row-gap: 0;
+        }
+        @include max-md{
+            width: 50%;
+            row-gap: 10px;
+        }
+        &:nth-child(1) {
+            order: 1;
+        }
+        &:nth-child(4) {
+            order: 2;
+        }
+        &:nth-child(2) {
+            order: 3;
+        }
+        &:nth-child(3) {
+            order: 4;
+        }
+    }
+    &__number {
+        font-family: Philosopher;
+        font-size: 96px;
+        font-weight: 700;
+        line-height: 129px;
+        color: #936d42;
+        @include max-xlmidle{
+            font-size: 75px;
+            line-height: 89px;
+        }
+        @include max-lg{
+            font-size: 64px;
+            line-height: 72px;
+        }
+        
+        &-desc {
+            font-family: Mulish;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 24px;
+            text-align: center;
+            color: #fffcfa;
+            text-transform: uppercase;
+            @include max-md{
+                font-size: 16px;
+                line-height: 21px;
+            }
+            
+        }
+    }
+}

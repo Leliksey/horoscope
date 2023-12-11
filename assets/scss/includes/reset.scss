@@ -101,6 +101,10 @@ nav,
 section {
 	display: block;
 }
+html,
+body {
+	overflow-x: hidden;
+}
 body {
 	font-family: "Raleway", sans-serif;
 	background-color: #fdf6f0;
@@ -177,6 +181,17 @@ button {
 	padding: 0 48px;
 	@include max-xxl {
 		padding: 0 35px;
+	}
+	@include max-lg {
+		padding: 0 24px;
+	}
+}
+.container2 {
+	max-width: 1920px;
+	margin: auto;
+	padding: 0 370px;
+	@include max-xxxl {
+		padding: 0 150px;
 	}
 	@include max-lg {
 		padding: 0 24px;
@@ -267,7 +282,12 @@ button {
 		background-size: contain;
 		background-repeat: no-repeat;
 		display: block;
+		transition: .5s;
 	}
+}
+.link-more:hover::before {
+	transform: rotate(90deg);
+	transition: .5s;
 }
 .btn__next {
 	width: 13px;
@@ -383,4 +403,24 @@ select::-ms-expand {
 		font-size: 16px;
 		line-height: 18px;
 	}
+}
+.blockTemplate {
+	overflow: hidden;
+	&__content {
+		padding: 120px 0;
+		@include max-xlmidle{
+			padding: 80px 0;
+		}
+		@include max-md{
+			padding: 56px 0;
+		}
+		
+	}
+}
+.mw230 {
+	max-width: 230px !important;
+	@include max-lg{
+		max-width: 100% !important;
+	}
+	
 }
