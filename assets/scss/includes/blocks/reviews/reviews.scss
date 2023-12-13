@@ -1,0 +1,248 @@
+.reviews {
+
+    // padding: 120px 0 0;
+    @include max-xlmidle {
+        // padding: 75px 0 0;
+    }
+
+    @include max-md {
+        // padding: 48px 0 0;
+    }
+
+    &__sectionText {
+        margin-top: 16px;
+        max-width: 674px;
+        margin: 16px auto 0;
+
+        @include max-md {
+            max-width: 342px;
+            margin: 16px auto 0;
+        }
+
+    }
+
+    &__content {
+        &>.link-more {
+            justify-content: center;
+            margin: 55px 0;
+            display: none;
+            font-size: 18px;
+
+            @include max-xxxl {
+                display: flex;
+            }
+
+            @include max-md {
+                font-size: 13px;
+                margin: 40px 0 55px;
+            }
+
+        }
+    }
+
+    &__items {
+        display: flex;
+        position: relative;
+
+        // flex-wrap: wrap;
+        // margin-top: 82px;
+        @include max-xlmidle {
+            // margin-top: 50px;
+        }
+
+        @include max-md {
+            // margin-top: 32px;
+        }
+
+        & .link-more {
+            margin-top: 24px;
+        }
+
+        & .owl-item.active:nth-child(even) {
+            background-color: #fffcfa;
+        }
+
+        & .owl-nav {
+            position: absolute;
+            width: 100%;
+            height: max-content;
+            display: flex;
+            justify-content: center;
+            column-gap: 30px;
+            left: 0;
+            bottom: -50px;
+
+            & span {
+                display: none;
+            }
+
+            & button {
+                background-image: url("data:image/svg+xml,%3Csvg width='37' height='23' viewBox='0 0 37 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.3333 0.708008C12.3333 1.85192 11.2033 3.56009 10.0594 4.99384C8.58863 6.84384 6.83113 8.45797 4.81617 9.68976C3.30534 10.6132 1.47383 11.4997 9.53674e-07 11.4997M9.53674e-07 11.4997C1.47383 11.4997 3.30688 12.3861 4.81617 13.3096C6.83113 14.5429 8.58863 16.1571 10.0594 18.004C11.2033 19.4393 12.3333 21.1505 12.3333 22.2913M9.53674e-07 11.4997H37' stroke='%23936D42'/%3E%3C/svg%3E%0A");
+                width: 37px;
+                height: 22px;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            & button.owl-next {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__item {
+        padding: 32px 32px 40px;
+        border: 1px solid #e7e7e7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include max-xxxl {}
+
+        @include max-xxl {
+            padding: 32px 24px;
+        }
+
+        @include max-md {}
+
+        &:hover .reviews__item-img_play {
+            display: block;
+        }
+
+        &:nth-child(odd) {
+            // background-color: #fffcfa;
+        }
+
+        &-img__wrap {
+            position: relative;
+        }
+
+        &-img_play {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            max-width: 60px;
+            height: max-content;
+            cursor: pointer;
+            display: none;
+        }
+
+        &-img {
+            max-width: 252px;
+
+            @include max-xlmidle {
+                max-width: 200px;
+            }
+
+            @include max-lg {
+                max-width: 152px;
+            }
+
+            @include max-md {
+                max-width: 90px;
+            }
+
+        }
+
+        &-title {
+            margin-top: 32px;
+            font-family: Philosopher;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 26px;
+            color: #936d42;
+            text-transform: uppercase;
+            text-align: center;
+
+            @include max-xlmidle {
+                margin-top: 25px;
+            }
+
+            @include max-md {
+                margin-top: 16px;
+                font-size: 16px;
+                line-height: 20px;
+            }
+
+        }
+
+        &-desc {
+            margin-top: 24px;
+
+            @include max-md {
+                display: none;
+            }
+
+        }
+    }
+}
+
+// .categoryWall__item[style*="display: block"] {
+//     display: flex !important;
+//   }
+
+.review {
+    padding: 48px;
+    background-color: #FDF6F0;
+    max-width: 700px;
+    width: 100%;
+    height: max-content;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__name {
+        font-family: Philosopher;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 37px;
+        color: #936D42;
+    }
+
+    &__date {
+        font-family: Mulish;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 31px;
+        color: #818181;
+    }
+
+    &__text {
+        margin-top: 16px;
+        text-align: left;
+    }
+
+    &__video {
+        margin-top: 48px;
+        position: relative;
+        & video {
+            display: none;
+        }
+        &.vid_rev {
+            height: max-content;
+        }
+        &-btn {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 65px;
+            height: 65px;
+        }
+    }
+}

@@ -1,25 +1,152 @@
 .about {
-    &__content {}
+    &__content {
+        display: flex;
+        justify-content: center;
+        column-gap: 120px;
 
-    &__info {}
+        @include max-xl {
+            column-gap: 50px;
+            align-items: center;
+        }
 
-    &__title {}
+        @include max-md {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
 
-    &__desc {}
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 505px;
 
-    &__list {}
+        @include max-xl {
+            max-width: 430px;
+        }
 
-    &-item {}
+        @include max-md {
+            max-width: 100%
+        }
+    }
 
-    &custom__link {}
+    &__title {
+        margin: 0;
+    }
+
+    &__desc {
+        margin-top: 40px;
+        text-align: left;
+
+        @include max-xl {
+            margin-top: 15px;
+        }
+
+        @include max-xl {
+            margin-top: 32px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        margin-top: 32px;
+
+        @include max-xl {
+            margin-top: 16px;
+            row-gap: 16px;
+        }
+
+        &-item {
+            text-transform: uppercase;
+            display: flex;
+            align-items: baseline;
+            column-gap: 10px;
+            text-align: left;
+
+            @include max-md {
+                text-transform: initial;
+            }
+
+            &::before {
+                content: "";
+                background-image: url("data:image/svg+xml,%3Csvg width='14' height='16' viewBox='0 0 14 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.0566 6.33962L6.64151 0L4.5283 6.33962L0 8.45283L4.5283 10.566L6.64151 16L9.0566 10.566L13.5849 8.45283L9.0566 6.33962Z' fill='%23936D42'/%3E%3C/svg%3E%0A");
+                width: 14px;
+                height: 16px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: block;
+                transition: .5s;
+            }
+        }
+    }
+
+    & .custom__link {
+        margin-top: 54px;
+
+        @include max-xl {
+            margin-top: 35px;
+        }
+
+        &_desctop {
+            @include max-md {
+                display: none;
+            }
+        }
+
+        &_mobile {
+            display: none;
+            @include max-md {
+                display: flex;
+                margin: 43px auto 0;
+            }
+        }
+    }
+
     &__img {
+        max-width: 467px;
 
+        @include max-xl {
+            max-width: 350px;
+        }
+
+        @include max-md {
+            max-width: 217px;
+        }
     }
+
     & .planet1 {
+        max-width: 112px;
+        position: absolute;
+        bottom: -35px;
+        left: -50px;
 
+        @include max-md {
+            max-width: 80px;
+            bottom: -5px;
+        }
     }
+
     & .planet2 {
+        max-width: 83px;
+        position: absolute;
+        top: 0;
+        right: 0;
 
+        @include max-md {
+            max-width: 58px;
+            top: -10px;
+            right: 10px;
+        }
     }
-    &__img-wrap {}
+
+    &__img-wrap {
+        position: relative;
+        height: max-content;
+
+        @include max-md {
+            margin: 64px auto 0;
+        }
+    }
 }
