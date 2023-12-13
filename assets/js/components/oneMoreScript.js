@@ -41,10 +41,45 @@ $(document).ready(function() {
                 items:1
             },
             576:{
-                items:2
+                items:2,
+                stagePadding: 30
             },
             1400:{
                 items:3
+            }
+        }
+    });
+    $('.sertificates__slider').owlCarousel({
+        loop:true,
+        nav:true,
+        mouseDrag:true,
+        touchDrag: true,
+        pullDrag:false,
+        freeDrag:false,
+        URLhashListener:false,
+        dots:true,
+        autoplay:false,
+        stagePadding: 80,
+        responsive:{
+            0:{
+                items:1,
+                margin: 32,
+                
+            },
+            576:{
+                items:2,
+                margin: 32,
+                stagePadding: 0,
+            },
+            768: {
+                margin: 40,
+            },
+            1400:{
+                items:3,
+                margin: 40,
+            },
+            1570:{
+                margin: 64,
             }
         }
     });

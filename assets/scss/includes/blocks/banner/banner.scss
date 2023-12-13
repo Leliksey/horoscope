@@ -1,0 +1,74 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 64px;
+    padding: 33px 0 0;
+    background-color: #05081E;
+    position: relative;
+    overflow: hidden;
+    max-height: 482px;
+    @include max-xlmidle {
+        padding: 35px;
+    }
+    @include max-lg {
+        column-gap: 30px;
+    }
+    @include max-md {
+        flex-direction: column;
+        padding: 56px 25px;
+    }
+    &__img {
+        max-width: 355px;
+        @include max-lg {
+            max-width: 255px;
+        }
+        @include max-md {
+            display: none;
+        }
+    }
+    &__bg1 {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       z-index: 2; 
+       
+    }
+    &__bg2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3; 
+    }
+    &__info {}
+
+    & .sectionTitle {
+        color: #FFFCFA;
+        text-align: left;
+        margin: 0;
+        @include max-md {
+            text-align: center;
+        }
+    }
+
+    & .sectionText {
+        color: #FFFCFA;
+        margin-top: 24px;
+        text-align: left;
+        max-width: 573px;
+        @include max-md {
+            display: none;
+        }
+    }
+
+    &__btn {
+        margin-top: 47px;
+        @include max-md {
+            margin: 40px auto 0;
+        }
+    }
+}
