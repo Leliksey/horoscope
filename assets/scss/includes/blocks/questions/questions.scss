@@ -1,0 +1,91 @@
+.questions {
+    padding: 120px 0;
+    @include max-md{
+        padding: 56px 0;
+    }
+    
+    &__content {
+        max-width: 1180px;
+        width: 100%;
+        margin: auto;
+    }
+    & .sectionTitle {
+        margin: 0;
+        @include max-md{
+            text-align: left;
+        }
+        
+    }
+    &__list {
+        margin-top: 64px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+        @include max-md{
+            margin-top: 32px;
+            row-gap: 24px;
+        }
+        
+        &.open .questions__item {
+            transition: .5s;
+            display: block;
+        }
+    }
+    &__item {
+        position: relative;
+        padding: 24px 56px 24px 24px;
+        border: 1px solid #E7E7E7;
+        background-color: #FFFCFA;
+        @include max-md{
+            padding: 24px;
+        }
+        
+        &:nth-child(n + 5) {
+            display: none;
+        }
+        &-title {
+            font-family: Philosopher;
+            text-transform: uppercase;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 27px;
+            text-align: left;
+            color: #936d42;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include max-md{
+                font-size: 16px;
+                line-height: 18px;
+            }
+            
+        }
+        &-text {
+            margin-top: 24px;
+            text-align: left;
+            display: none;
+            @include max-md{
+                margin-top: 12px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+            
+        }
+        &-arrow {
+            transform: rotate(-90deg);
+            width: 20px;
+            height: 10px;
+            &.open {
+                transform: rotate(0);
+            }
+        }
+    }
+    &__link-more {
+        margin: 64px auto 0;
+        justify-content: center;
+        @include max-md{
+            margin: 40px auto 0;
+        }
+        
+    }
+}

@@ -92,4 +92,12 @@ $(document).ready(function() {
             }
         }
     });
+    $(".questions__item").click(function() {
+        $(this).find(".questions__item-text").slideToggle();
+        $(this).find(".questions__item-arrow").toggleClass("open");
+    });
+    $("#seeMore2").click(function(e) {
+        e.preventDefault();
+        $(".questions__list").toggleClass("open");
+    });
 });
