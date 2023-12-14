@@ -100,4 +100,9 @@ $(document).ready(function() {
         e.preventDefault();
         $(".questions__list").toggleClass("open");
     });
+    $("#steps__seeMore").click(function(e) {
+        e.preventDefault();
+        $(".steps__range-item.active").next().addClass("active");
+    });
+    $("#phone").mask("+38 (000) 00-00-000");
 });

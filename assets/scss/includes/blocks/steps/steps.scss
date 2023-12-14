@@ -144,6 +144,24 @@
                 color: #818181;
             }
         }
+        & textarea {
+            background-color: #fcf7f0;
+            padding: 17px 16px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22px;
+            resize: none;
+            border-radius: 8px;
+            &::placeholder {
+                font-family: Mulish;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 22px;
+                color: #818181;
+            }
+        }
     }
     &__link-more {
         color: #fffcfa;
