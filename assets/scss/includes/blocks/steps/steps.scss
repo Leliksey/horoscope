@@ -1,0 +1,173 @@
+.steps {
+    padding: 120px 0 135px;
+    background-color: #05081e;
+    @include max-lg {
+        padding: 75px 0;
+    }
+    @include max-md {
+        padding: 56px 0;
+    }
+
+    & .whatIs__stars-bg-img {
+        height: 100%;
+        object-fit: contain;
+    }
+    &__content {
+        display: flex;
+        column-gap: 94px;
+        justify-content: center;
+        @include max-xlmidle {
+            column-gap: 50px;
+        }
+        @include max-lg {
+            column-gap: 0;
+        }
+    }
+    &__info {
+        @include max-md{
+            width: 100%;
+        }
+        
+    }
+    &__sectionTitle {
+        @include max-md{
+            max-width: 200px;
+        }
+        
+    }
+    &__range {
+        margin: 80px 100px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        @include max-lg {
+            margin: 50px 100px 0 0;
+        }
+        @include max-md {
+            margin: 40px 0 0 0;
+        }
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: #936d42;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        &-item {
+            font-family: Philosopher;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 23px;
+            letter-spacing: 0em;
+            text-align: center;
+            color: #fffcfa;
+            border: 1px solid #936d42;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #05081e;
+            z-index: 3;
+            &.active {
+                background-color: #936d42;
+            }
+        }
+    }
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        margin: 80px 100px 0 0;
+        @include max-lg {
+            margin: 50px 100px 0 0;
+        }
+        @include max-md {
+            margin: 50px 0 0 0;
+        }
+        &-select__wrapper {
+            padding-right: 25px;
+            border-radius: 8px;
+            background-color: #fcf7f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &::after {
+                content: "";
+                background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L6 6L1 1' stroke='%23818181' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                width: 5px;
+                height: 10px;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            & select {
+                padding: 17px 16px;
+                border-radius: 8px;
+                background-color: #fcf7f0;
+                width: 100%;
+                border: none;
+                outline: none;
+                font-family: Mulish;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 22px;
+                color: #818181;
+            }
+        }
+        & input {
+            border-radius: 8px;
+            background-color: #fcf7f0;
+            padding: 17px 16px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22px;
+            @include max-md {
+                padding: 20px 16px;
+            }
+
+            &::placeholder {
+                font-family: Mulish;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 22px;
+                color: #818181;
+            }
+        }
+    }
+    &__link-more {
+        color: #fffcfa;
+        margin: 40px 100px 0 0;
+        justify-content: flex-end;
+        @include max-lg {
+            margin: 30px 100px 0 0;
+        }
+        @include max-md {
+            margin: 40px 0 0 0;
+        }
+    }
+    &__img {
+        max-width: 344px;
+        @include max-xlmidle {
+            max-width: 244px;
+        }
+        @include max-lg {
+            max-width: 200px;
+            display: flex;
+            align-items: center;
+        }
+        @include max-md {
+            display: none;
+        }
+    }
+}
