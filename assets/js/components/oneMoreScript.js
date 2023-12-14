@@ -11,6 +11,7 @@ $(document).ready(function() {
     $(document).on("click", ".overlay", function() {
         $(".overlay").remove();
         $(".burgerMenu__close").click();
+        $(".guideModal").hide();
     });
     $("#seeMore").click(function(e) {
         e.preventDefault();
@@ -19,5 +20,13 @@ $(document).ready(function() {
     $(".pricing__tab").click(function() {
         $(".pricing__tab").removeClass("active");
         $(this).addClass("active");
-    })
+    });
+    $(".pricing__item-btn").click(function() {
+        $("body").append(overlay);
+        $(".overlay").show();
+        $(".guideModal").show();
+    });
+    $(".guideModal__checkbox-wrap").click(function() {
+        $(".guideModal__checkbox-wrap input").click();
+    });
 });
