@@ -100,9 +100,36 @@ $(document).ready(function() {
         e.preventDefault();
         $(".questions__list").toggleClass("open");
     });
-    $("#steps__seeMore").click(function(e) {
+    $("#steps__next").click(function(e) {
         e.preventDefault();
+        $(".steps__range-item.current").next().addClass("current");
+        $(".steps__range-item.current").prev().removeClass("current");
         $(".steps__range-item.active").next().addClass("active");
+        $("#steps__back").addClass("d__flex");
+        $(".steps__navigation").css("justify-content", "space-between");
+        let index = $(".steps__range-item.current").index();
+        console.log(index);
+        
+        $(".step").addClass("hide");
+        $(".step").eq(index).removeClass("hide");
+    });
+    $("#steps__back").click(function(e) {
+        e.preventDefault();
+        $(".steps__range-item.current").prev().addClass("current");
+        $(".steps__range-item.current").next().removeClass("current");
+        let index = $(".steps__range-item.current").index();
+        $(".step").addClass("hide");
+        $(".step").eq(index).removeClass("hide");
+        let count = $(".steps__range-item.active");
+        if(count.length < 2) {
+            return
+        } else {
+            $(".steps__range-item.active").eq(-1).removeClass("active");
+        }
+        if(count.length < 3) {
+            $("#steps__back").removeClass("d__flex");
+            $(".steps__navigation").css("justify-content", "flex-end");
+        }
     });
     $("#phone").mask("+38 (000) 00-00-000");
 });

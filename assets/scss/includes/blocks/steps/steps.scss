@@ -34,14 +34,15 @@
         }
     }
     &__range {
-        margin: 80px 100px 0 0;
+        margin: 80px 00 0;
+        max-width: 575px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
         overflow: hidden;
         @include max-lg {
-            margin: 50px 100px 0 0;
+            margin: 50px 0 0 0;
         }
         @include max-md {
             margin: 40px 0 0 0;
@@ -81,13 +82,16 @@
             }
         }
     }
+    &__wrap {
+        max-width: 575px;
+    }
     &__inputs {
         display: flex;
         flex-direction: column;
         row-gap: 24px;
-        margin: 80px 100px 0 0;
+        margin: 80px 0 0 0;
         @include max-lg {
-            margin: 50px 100px 0 0;
+            margin: 50px 0 0 0;
         }
         @include max-md {
             margin: 50px 0 0 0;
@@ -164,21 +168,22 @@
     &__navigation {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
+        max-width: 575px;
     }
     &__link-more {
         color: #fffcfa;
-        margin: 40px 100px 0 0;
+        margin: 40px 0 0 0;
         justify-content: flex-end;
         @include max-lg {
-            margin: 30px 100px 0 0;
+            margin: 30px 0 0 0;
         }
         @include max-md {
             margin: 40px 0 0 0;
         }
     }
     & #steps__back.link-more {
-        display: flex;
+        display: none;
         align-items: center;
         column-gap: 10px;
         &:hover::before {
@@ -210,6 +215,7 @@
         display: flex;
         flex-direction: column;
         row-gap: 16px;
+        margin-top: 80px;
         & * {
             font-family: Mulish;
             font-size: 16px;
@@ -225,6 +231,7 @@
         }
     }
     &__final {
+        margin-top: 45px;
         & p {
             color: #c4c4c4;
             text-transform: uppercase;
@@ -279,6 +286,9 @@
         }
     }
 }
+.custom-radio {
+    cursor: pointer;
+}
 /* для элемента input c type="radio" */
 .custom-radio > input {
     position: absolute;
@@ -312,4 +322,8 @@
 /* стили для радиокнопки, находящейся в состоянии checked */
 .custom-radio > input:checked + span::before {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+.step2 .sectionText {
+    color: #936D42;
+    text-align: left;
 }
