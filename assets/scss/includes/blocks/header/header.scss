@@ -60,6 +60,7 @@
             height: 16px;
             background-size: contain;
             background-repeat: no-repeat;
+            transition: .5s;
         }
     }
     &__link {
@@ -69,6 +70,18 @@
         font-weight: 600;
         line-height: 16px;
         color: #05081e;
+        &::after {
+            content: "";
+            width: 0;
+            transition: .5s;
+            height: 1px;
+            background-color: #936D42;
+            display: block;
+        }
+        &:hover::after {
+            width: 100%;
+            transition: .5s;
+        }
     }
 }
 .burger {
@@ -111,6 +124,18 @@
         z-index: 15;
         & .menu__link {
             color: #fff;
+            &::after {
+                content: "";
+                width: 0;
+                transition: .5s;
+                height: 1px;
+                background-color: #936D42;
+                display: block;
+            }
+            &:hover::after {
+                width: 100%;
+                transition: .5s;
+            }
         }
         padding: 154px 30px 40px;
         border-bottom: 1px solid #3f3f3f;

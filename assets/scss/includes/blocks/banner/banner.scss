@@ -45,7 +45,9 @@
         height: 100%;
         z-index: 3; 
     }
-    &__info {}
+    &__info {
+        z-index: 5;
+    }
 
     & .sectionTitle {
         color: #FFFCFA;

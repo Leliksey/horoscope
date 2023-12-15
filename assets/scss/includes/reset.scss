@@ -101,6 +101,9 @@ nav,
 section {
 	display: block;
 }
+html {
+	scroll-behavior: smooth;
+}
 html,
 body {
 	overflow-x: hidden;
@@ -267,6 +270,15 @@ button {
 	text-align: center;
 	color: #05081E;
 }
+#seeMore2.link-more::after,
+#seeMore.link-more::after {
+	// display: none;
+}
+#seeMore2.link-more,
+#seeMore.link-more {
+	width: max-content;
+	margin: 55px auto;
+}
 .link-more {
 	font-family: Mulish;
 	font-size: 13px;
@@ -278,6 +290,23 @@ button {
 	column-gap: 10px;
 	text-transform: uppercase;
 	cursor: pointer;
+	position: relative;
+	&::after {
+		content: "";
+		width: 0;
+		transition: .5s;
+		height: 1px;
+		background-color: #936D42;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 25px;
+	}
+	&:hover::after {
+		width: calc(100% - 25px);
+		transition: .5s;
+
+	}
 	&::before {
 		content: "";
 		background-image: url("data:image/svg+xml,%3Csvg width='14' height='16' viewBox='0 0 14 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.0566 6.33962L6.64151 0L4.5283 6.33962L0 8.45283L4.5283 10.566L6.64151 16L9.0566 10.566L13.5849 8.45283L9.0566 6.33962Z' fill='%23936D42'/%3E%3C/svg%3E%0A");
@@ -289,10 +318,13 @@ button {
 		transition: .5s;
 	}
 }
+.custom__link:hover span::before,
+.menu__item:hover::before,
 .link-more:hover::before {
 	transform: rotate(90deg);
 	transition: .5s;
 }
+
 .btn__next {
 	width: 13px;
 	position: absolute;
@@ -321,6 +353,22 @@ select::-ms-expand {
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	& span::after {
+		content: "";
+		width: 0;
+		transition: .5s;
+		height: 1px;
+		background-color: #936D42;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 25px;
+		
+	}
+	&:hover span::after {
+		width: calc(100% - 25px);
+		transition: .5s;
+	}
 	&.black {
 		background-color: #05081e;
 		color: #fff;
@@ -340,6 +388,8 @@ select::-ms-expand {
 		font-weight: 700;
 		line-height: 22px;
 		color: #fffcfa;
+		position: relative;
+		
 		&::before {
 			content: "";
 			background-image: url("data:image/svg+xml,%3Csvg width='14' height='16' viewBox='0 0 14 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.0566 6.33962L6.64151 0L4.5283 6.33962L0 8.45283L4.5283 10.566L6.64151 16L9.0566 10.566L13.5849 8.45283L9.0566 6.33962Z' fill='%23936D42'/%3E%3C/svg%3E%0A");
@@ -348,7 +398,9 @@ select::-ms-expand {
 			background-size: contain;
 			background-repeat: no-repeat;
 			display: block;
+			transition: .5s;
 		}
+		
 	}
 }
 .sub__header_fullwidth {

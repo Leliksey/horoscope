@@ -1,23 +1,24 @@
 .sertificates {
-    padding: 120px 144px;
+    padding: 120px 144px 220px;
     @include max-xxxl {
-        padding: 80px 100px;
+        padding: 80px 100px 150px;
     }
     @include max-xxl {
-        padding: 60px 80px;
+        padding: 60px 80px 180px;
     }
     @include max-xl {
-        padding: 50px 90px;
+        padding: 50px 90px 160px;
     }
     @include max-lg {
-        padding: 40px 80px;
+        padding: 40px 20px 140px;
     }
     @include max-md {
-        padding: 30px 50px;
+        padding: 56px 0 70px;
     }
-    @include max-md {
-        padding: 56px 12px;
+    @include max-sm{
+        padding: 56px 0 56px 12px;
     }
+    
     &__desc {
         margin: 16px auto 0;
         max-width: 674px;
@@ -25,11 +26,25 @@
 
     &__slider {
         margin-top: 64px;
+        position: relative;
         @include max-xxxl {
             margin-top: 40px;
         }
         @include max-sm {
-            margin-left: -80px;
+            margin-left: -120px;
+        }
+        & .owl-item {
+            transform: scale(0.8);
+            opacity: .5;
+            @include max-sm{
+                transform: scale(1);
+                opacity: 1;
+            }
+            
+            &.center {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
         & .owl-nav {
             position: absolute;
@@ -39,13 +54,14 @@
             justify-content: center;
             column-gap: 30px;
             left: 0;
-            bottom: 30px;
+            bottom: -150px;
+            margin-top: 50px;
             pointer-events: all;
             @include max-xxl {
-                bottom: 15px;
+                bottom: -150px;
             }
             @include max-lg {
-                bottom: 0;
+                bottom: -150px;
             }
             @include max-md {
                 display: none;

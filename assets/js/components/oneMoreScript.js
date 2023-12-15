@@ -27,14 +27,22 @@ $(document).ready(function() {
         $(".overlay").show();
         $(".guideModal").show();
     });
-    $(".guideModal__checkbox-wrap").click(function() {
-        $(".guideModal__checkbox-wrap input").click();
-    });
-    $(".reviews__item-img_play, .reviews .link-more").click(function() {
+    $(document).on("click", ".reviews .link-more", function() {
         $("body").append(overlay);
         $(".review").show();
+        let name = $(this).parents(".reviews__item").find(".reviews__item-title").text();
+        let text = $(this).parents(".reviews__item").find(".reviews__item-desc").text();
+        $(".review__name").text(name);
+        $(".review__text").text(text);
     });
-    
+    $(document).on("click", ".reviews__item-img_play", function() {
+        $("body").append(overlay);
+        $(".review").show();
+        let name = $(this).parents(".reviews__item").find(".reviews__item-title").text();
+        let text = $(this).parents(".reviews__item").find(".reviews__item-desc").text();
+        $(".review__name").text(name);
+        $(".review__text").text(text);
+    });
     $('.reviews__items').owlCarousel({
         loop:true,
         nav:true,
@@ -47,7 +55,8 @@ $(document).ready(function() {
         autoplay:false,
         responsive:{
             0:{
-                items:1
+                items:1,
+                stagePadding: 170,
             },
             576:{
                 items:2,
@@ -60,6 +69,7 @@ $(document).ready(function() {
     });
     $('.sertificates__slider').owlCarousel({
         loop:true,
+        center: true,
         nav:true,
         mouseDrag:true,
         touchDrag: true,
@@ -68,17 +78,17 @@ $(document).ready(function() {
         URLhashListener:false,
         dots:true,
         autoplay:false,
-        stagePadding: 80,
         responsive:{
             0:{
                 items:1,
                 margin: 32,
-                
+                center: false,
+                stagePadding: 120,
             },
             576:{
                 items:2,
                 margin: 32,
-                stagePadding: 0,
+                stagePadding: false,
             },
             768: {
                 margin: 40,
@@ -108,10 +118,12 @@ $(document).ready(function() {
         $("#steps__back").addClass("d__flex");
         $(".steps__navigation").css("justify-content", "space-between");
         let index = $(".steps__range-item.current").index();
-        console.log(index);
-        
         $(".step").addClass("hide");
         $(".step").eq(index).removeClass("hide");
+        let count = $(".steps__range-item.active");
+        if(count.length > 3) {
+            $("#steps__next").hide();
+        }
     });
     $("#steps__back").click(function(e) {
         e.preventDefault();
@@ -129,6 +141,9 @@ $(document).ready(function() {
         if(count.length < 3) {
             $("#steps__back").removeClass("d__flex");
             $(".steps__navigation").css("justify-content", "flex-end");
+        }
+        if(count.length == 4) {
+            $("#steps__next").show();
         }
     });
     $("#phone").mask("+38 (000) 00-00-000");
