@@ -238,10 +238,12 @@
         margin-top: 48px;
         position: relative;
         & video {
-            display: none;
+            // display: none;
+            width: 100%;
         }
-        &.vid_rev {
+        & .vid_rev {
             height: max-content;
+            display: none;
         }
         &-btn {
             position: absolute;

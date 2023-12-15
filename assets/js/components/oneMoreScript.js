@@ -91,14 +91,14 @@ $(document).ready(function() {
                 stagePadding: false,
             },
             768: {
-                margin: 40,
+                margin: 20,
             },
             1400:{
                 items:3,
-                margin: 40,
+                margin: 20,
             },
             1570:{
-                margin: 64,
+                margin: 20,
             }
         }
     });
@@ -147,4 +147,67 @@ $(document).ready(function() {
         }
     });
     $("#phone").mask("+38 (000) 00-00-000");
+
+    $("#service").on("input", function() {
+        let service = $(this).val();
+        $(".step3__service").text(service);
+    });
+    $("#name").on("input", function() {
+        let name = $(this).val();
+        $(".step3__name").text(name);
+    });
+    $("#mail").on("input", function() {
+        let mail = $(this).val();
+        $(".step3__mail").text(mail);
+    });
+    $("#gender").on("input", function() {
+        let gender = $(this).val();
+        $(".step3__gender").text(gender);
+    });
+    $("#birthday").on("input", function() {
+        let birthday = $(this).val();
+        $(".step3__birthday").text(birthday);
+    });
+    $("#time").on("input", function() {
+        let time = $(this).val();
+        $(".step3__time").text(time);
+    });
+    $("#place").on("input", function() {
+        let place = $(this).val();
+        $(".step3__place").text(place);
+    });
+    $(".steps__final-btn").on("click", function(e) {
+        e.preventDefault();
+        // Проверяем, не выбран ли чекбокс
+        if (!$(".steps__final-checkbox__wrapper .custom-checkbox input").prop("checked")) {
+            // Если чекбокс не выбран, добавляем класс для изменения цвета
+            $(".steps__final-checkbox__wrapper").addClass("error");
+        } else {
+            $(".steps__final-checkbox__wrapper").removeClass("error");
+        }
+    });
+    
+    
+});
+document.addEventListener('DOMContentLoaded', function () {
+    var video = document.getElementById('reviewVideo');
+    var playButton = document.getElementById('review__video-btn');
+
+    playButton.addEventListener('click', function () {
+        if (video.paused || video.ended) {
+            video.play();
+            playButton.style.display = 'none';
+        } else {
+            video.pause();
+            playButton.style.display = 'block';
+        }
+    });
+
+    video.addEventListener('pause', function () {
+        playButton.style.display = 'block';
+    });
+
+    video.addEventListener('ended', function () {
+        playButton.style.display = 'block';
+    });
 });
